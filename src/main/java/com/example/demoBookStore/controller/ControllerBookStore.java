@@ -37,10 +37,11 @@ public class ControllerBookStore {
 
     @RequestMapping(value = "/search-results", method = RequestMethod.GET)
     public String searchResults(Model model, @RequestParam String search) {
+        String pattern = '%' + search + '%';
         List<Book> books = jdbcTemplate.query(
-        "SELECT * from allbooks WHERE book LIKE ?",
-                new Object[]{'%' + search + '%'},
-                new int[] { Types.VARCHAR },
+        "SELECT * from allbooks WHERE book LIKE ? OR author LIKE ?",
+                new Object[]{pattern, pattern},
+                new int[] { Types.VARCHAR, Types.VARCHAR },
                 (RowMapper<Book>) (rs, i) -> {
                     Book book = new Book();
                     book.id = rs.getInt("id");
@@ -58,20 +59,6 @@ public class ControllerBookStore {
         return "search-results";
     }
 
-//    @RequestMapping(value = "/browse ads", method = RequestMethod.GET)
-//    public String browseAds(){
-//        return "browse ads";
-//    }
-
-//    @RequestMapping(value = "/clients", method = RequestMethod.GET)
-//    public String clients(){
-//        return "clients";
-//    }
-
-//    @RequestMapping(value = "/contact", method = RequestMethod.GET)
-//    public String contact(){
-//        return "contact";
-//    }
 
 
 }

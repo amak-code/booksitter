@@ -52,7 +52,7 @@
 	<div class="search_results" >
 		<ul style="font-size:21px">
 			<li th:each="book: ${books}">
-				<span  th:text="${book.id}"></span>:
+<!--				<span  th:text="${book.id}"></span>:-->
 				<span th:text="${book.name}"></span>
 				(by <span th:text="${book.author}"></span>)
 				Condition:<span th:text="${book.condition}"></span>
@@ -68,16 +68,12 @@
     width: 100%;">
 		<div class="container">
 			<div class="row">
-<!--				<div class="col-sm-6 col-md-6 col-lg-3">-->
-<!--					<div><img src="images/footer-logo.png"></div>-->
-<!--&lt;!&ndash;					<p class="dolor_text">dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et sdolor sit amet,</p>&ndash;&gt;-->
-<!--				</div>-->
 
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<h1 class="quick_text" style="margin-top: 10%;">Contact Us</h1>
-					<div class="map_flag"><img src="images/map-flag.png"><span class="padding-left">900 Fallon St, Oakland, CA 94607</span></div>
-<!--					<div class="dolor_text"><img src="images/email-icon.png"><span class="padding-left">adsiter@gmail.com</span></div>-->
-					<div class="dolor_text"><img src="images/phone-icon.png"><span class="padding-left">(510) 834-5740</span></div>
+					<div class="map_flag"><img src="images/map-flag.png"><span class="padding-left" style=" padding-left: 3%;">900 Fallon St, Oakland, CA 94607</span></div>
+
+					<div class="dolor_text"><img src="images/phone-icon.png"><span class="padding-left" style=" padding-left: 3%;">(510) 834-5740</span></div>
 				</div>
 				<div class="copyright">
 					<p class="copyright_text">2019 All Rights Reserved. Design By <a href="https://html.design"> Free Html Templates</a>
