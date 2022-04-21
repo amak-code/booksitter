@@ -1,7 +1,7 @@
 # booksitter
 
-The college books are expensive and my goal is to help students to find used book in a good condition. 
-It's main purpose of the Booksitter app is to connect students who would like to buy the book with those who want to sell the book.
+The college books are expensive and my goal is to help students to find used book in a good condition. It's also a good way to save the enviroment when one book can be used multipli times.
+The main purpose of the Booksitter app is to connect students who would like to buy the book with those who want to sell the book.
 
 Booksitter project is a graphical application written in Java using Spring Boot, HTML, CSS, Mysql.
 
