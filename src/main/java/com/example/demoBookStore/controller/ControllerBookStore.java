@@ -6,6 +6,9 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +31,38 @@ public class ControllerBookStore {
         public Integer price;
         public String stName;
         public String email;
+
+        public Integer getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public String getCondition() {
+            return condition;
+        }
+
+        public Integer getPrice() {
+            return price;
+        }
+
+        public String getStName() {
+            return stName;
+        }
+
+        public String getEmail() {
+            return email;
+        }
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -59,6 +94,22 @@ public class ControllerBookStore {
         return "search-results";
     }
 
+    @RequestMapping(value = "/bookadded", method = RequestMethod.POST)
+    public String submit(@Valid @ModelAttribute("books")Book book,
+                         BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+            return "error";
+        }
+//        model.addAttribute("name", book.getName());
+//        model.addAttribute("author", book.getAuthor());
+//        model.addAttribute("condition", book.getCondition());
+//        model.addAttribute("price", book.getPrice());
+//        model.addAttribute("stname", book.getStName());
+//        model.addAttribute("email", book.getEmail());
+//        model.addAttribute("phone", book.getPhone());
+        model.addAttribute("book", book);
+        return "bookadded";
+    }
 
 
 }
