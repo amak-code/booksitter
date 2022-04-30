@@ -114,25 +114,27 @@
                         <div class="col-md-6">
                             <div class="input_main">
                                 <div class="container">
-                                    <form method="post" action="/bookadded"  >
-                                        <input type="text" class="email-bt" placeholder="Your Name" name="Name"/>
+                                    <form method="post" action="#" th:action="@{/bookadded}" th:object="${book}" >
+                                        <div>
+                                        <input type="text" th:field="*{stName}" class="email-bt" placeholder="Your Name" name="Name"/>
+                                        </div>
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Email" name="Email"/>
+                                            <input type="text" th:field="*{email}" class="email-bt" placeholder="Email" name="Email"/>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="email-bt" placeholder="Phone" name="Phone"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Book name" name="Book name"/>
+                                            <input type="text" th:field="*{name}" class="email-bt" placeholder="Book name"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Author name" name="Author name"/>
+                                            <input type="text" th:field="*{author}" class="email-bt" placeholder="Author name" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Condition of the book" name="Condition of the book"/>
+                                            <input type="text" class="email-bt" placeholder="Condition of the book"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="Price" name="Price"/>
+                                            <input type="text" class="email-bt" placeholder="Price" />
                                         </div>
 
                                         <button type="submit">Add book</button>

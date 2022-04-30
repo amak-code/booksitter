@@ -63,10 +63,43 @@ public class ControllerBookStore {
         public String getEmail() {
             return email;
         }
+
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setAuthor(String author) {
+            this.author = author;
+        }
+
+        public void setPhone(String phone) {
+            this.phone = phone;
+        }
+
+        public void setCondition(String condition) {
+            this.condition = condition;
+        }
+
+        public void setPrice(Integer price) {
+            this.price = price;
+        }
+
+        public void setStName(String stName) {
+            this.stName = stName;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("book", new Book());
         return "index";
     }
 
